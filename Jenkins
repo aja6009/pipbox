@@ -1,11 +1,12 @@
 pipeline {
+    agent any
     stages {
-        stage ('GIT CHECKOUT') {
+        stage('SCM CHECKOUT') {
             steps {
                 sh 'https://github.com/aja6009/pipbox'
             }
         }
-        stage ('BUILD') {
+        stage('BUILD') {
             steps {
                 sh 'mvn package'
             }
